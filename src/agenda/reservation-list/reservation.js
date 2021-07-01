@@ -64,11 +64,14 @@ class Reservation extends Component {
     if (date) {
       return (
         <View style={this.style.day} testID={RESERVATION_DATE}>
+          <Text allowFontScaling={false} style={[this.style.dayText, today]}>
+            {XDate.locales[XDate.defaultLocale].dayNamesShort[date.getDay()]}
+          </Text>
           <Text allowFontScaling={false} style={[this.style.dayNum, today]}>
             {date.getDate()}
           </Text>
           <Text allowFontScaling={false} style={[this.style.dayText, today]}>
-            {XDate.locales[XDate.defaultLocale].dayNamesShort[date.getDay()]}
+            {XDate.locales[XDate.defaultLocale].monthNamesShort[date.getMonth()]}
           </Text>
         </View>
       );
